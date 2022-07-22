@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Hello Flask</title>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-          <a class="navbar-brand" href="{{ url_for('index') }}">Start Bootstrap</a>
+          <a class="navbar-brand" href="{{ url_for('index') }}">Thorin &amp; Company</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -37,14 +38,14 @@
       </nav>
     
       <!-- Page Header -->
-      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+      <header class="masthead" style="background-image: url('https://th.bing.com/th/id/R.abdd21b74eb22dae99dd922e33cea21d?rik=w3JiK1yQ%2bzHNmg&riu=http%3a%2f%2fpre02.deviantart.net%2f9ae0%2fth%2fpre%2ff%2f2013%2f275%2f8%2ff%2fthe_hobbit__thorin_and_company_by_art_calavera-d5nay7b.png&ehk=qVS%2fdgSdm83yTpyRcGiNVhFuFvLaKvR6uFbOj2RdBa0%3d&risl=&pid=ImgRaw&r=0')">
         <div class="overlay"></div>
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
               <div class="site-heading">
-                <h1>Clean Blog</h1>
-                <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                <h1>Thorin &amp; Company</h1>
+                <span class="subheading">Thorin and his Company of Dwarves</span>
               </div>
             </div>
           </div>
@@ -92,7 +93,7 @@
                   </a>
                 </li>
               </ul>
-              <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+              <p class="copyright text-muted">Copyright &copy; Your Website <span id="copyright"></span></p>
             </div>
           </div>
         </div>
@@ -105,5 +106,8 @@
       <!-- Custom scripts for this template -->
       <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
 
+       <script>
+        $("#copyright").text(new Date().getFullYear());
+       </script>
 </body>
 </html>
